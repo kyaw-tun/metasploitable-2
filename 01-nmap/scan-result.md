@@ -52,6 +52,14 @@ Port `21` was running vsftpd 2.3.4, and Nmap's default scripts reported that ano
 
 The combination of an old service version and anonymous access made this service worth investigating further.
 
+### SSH
+
+Port `22` was running OpenSSH 4.7p1.
+
+SSH provides remote command-line access to a system. The service version was identified by Nmap, making it another service that could potentially be investigated during an assessment.
+
+I did not pursue SSH further during this course, as the course focused on other attack paths. I have since encountered SSH in later lab exercises, but it was not part of the exploitation path documented here.
+
 ### UnrealIRCd
 
 Port `6667` was running UnrealIRCd 3.2.8.1.
