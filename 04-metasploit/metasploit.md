@@ -23,6 +23,7 @@ Help for a specific command can also be requested:
 ```bash
 msf> help search
 ```
+
 ## Searching for an Exploit
 
 The `search` command can be used to find modules matching a specific service or vulnerability:
@@ -73,7 +74,7 @@ msf> set payload payload/cmd/unix/reverse
 
 ## Configuring the Module
 
-The show options command displays the options that need to be configured:
+The `show options` command displays the options that need to be configured:
 
 ```bash
 msf> show options
