@@ -8,7 +8,9 @@ During the Red Team Essentials course, I used Nmap against the Metasploitable 2 
 
 An example scan used during the lab was:
 
+```bash
 nmap -sC -Pn -sV -oN scan.txt 10.xx.xx.xx
+```
 
 The options used here are:
 
