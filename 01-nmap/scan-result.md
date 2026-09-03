@@ -52,19 +52,6 @@ Port `21` was running vsftpd 2.3.4, and Nmap's default scripts reported that ano
 
 The combination of an old service version and anonymous access made this service worth investigating further.
 
-### SMB
-
-Ports `139` and `445` were running Samba 3.0.20.
-
-Nmap's NSE scripts also provided additional information about the system:
-
-- Hostname: `metasploitable`
-- FQDN: `metasploitable.localdomain`
-- Workgroup: `WORKGROUP`
-- SMB message signing: disabled
-
-The detected Samba version was particularly interesting for subsequent vulnerability research.
-
 ### UnrealIRCd
 
 Port `6667` was running UnrealIRCd 3.2.8.1.
