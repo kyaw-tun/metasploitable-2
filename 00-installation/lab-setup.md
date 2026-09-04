@@ -8,7 +8,8 @@ The installation process in the course can be summarized as:
 2. Download and install Metasploitable 2 as a second virtual machine.
 3. Configure the virtual network so that Kali and Metasploitable 2 can communicate with each other.
 4. Use Kali as the attacker machine and Metasploitable 2 as the intentionally vulnerable target.
-My Setup
+
+## My Setup
 
 My environment was different from the one used in the course. I already had Kali Linux installed directly as my host operating system, so I did not need to create a Kali virtual machine.
 
@@ -34,9 +35,22 @@ Kali Linux host
          └── Metasploitable 2
 ```
 
-The main difference is therefore the virtualization environment. The course uses VMware with both Kali Linux and Metasploitable 2 as virtual machines, while my Kali installation is the host and only Metasploitable 2 is virtualized.
-
 Because the Metasploitable 2 download provides a pre-built VMware-compatible VMDK disk image, an additional conversion step was needed before importing it into my QEMU/libvirt environment.
+
+## Network Isolation
+
+Because Metasploitable 2 is intentionally vulnerable, the course recommends keeping it on an isolated network.
+
+In the VMware setup used in the course, the network configuration is:
+
+- Adapter 1: Host-only Adapter
+- Network: Host-only Adapter
+
+This allows the Kali and Metasploitable 2 virtual machines to communicate with each other without placing the vulnerable target directly on the external network.
+
+My setup uses libvirt's `default` virtual network instead. The `default` network is backed by the `virbr0` virtual bridge.
+
+The important principle is the same: Metasploitable 2 should be kept on a controlled lab network and should not be exposed directly to an untrusted or external network.
 
 ## 1. Install QEMU/KVM and libvirt
 
@@ -139,7 +153,7 @@ sudo chown libvirt-qemu:kvm \
 ```
 ## 4. Create the Metasploitable 2 VM
 
-Create the VM using virt-install:
+Create the VM using `virt-install`:
 
 ```bash
 sudo virt-install \
@@ -175,22 +189,6 @@ vnet0       network   default   e1000
 
 ## 5. Verify the network connection
 
-In my setup, the `default` libvirt network is backed by the `virbr0` bridge.:
-
-```text
-Kali host
-192.168.122.1
-     │
-   virbr0
-     │
-     │ libvirt default network
-     │
-   vnet0
-     │
-Metasploitable 2
-192.168.122.68
-```
-
 Once the VM is running, its assigned IP can be obtained with:
 
 ```bash
@@ -204,6 +202,8 @@ Example:
 -----------------------------------------------------------
  vnet0   52:54:00:ee:ea:1f   ipv4       192.168.122.68/24
 ```
+
+In this setup, the host-side virbr0 address is `192.168.122.1`, while Metasploitable 2 received `192.168.122.68`.
 
 Verify connectivity from the Kali host:
 
@@ -229,8 +229,6 @@ Password: msfadmin
 ```
 
 ## Notes
-
-This setup differs from the course's VMware-based setup mainly because the host environment is different. The original Metasploitable 2 disk is provided as a VMDK, so it was converted to QCOW2 before being imported into QEMU/libvirt.
 
 Metasploitable 2 also does not always respond to a normal ACPI shutdown request. If a graceful shutdown with:
 
