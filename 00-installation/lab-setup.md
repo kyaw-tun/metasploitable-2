@@ -1,15 +1,42 @@
-# Lab Setup
+# Installation
 
-The course demonstrates the lab setup using Windows + VMware, with Kali Linux and Metasploitable 2 running as virtual machines.
+The course sets up the Red Team Essentials lab using two virtual machines: Kali Linux and Metasploitable 2. The host machine used in the course is Windows, and VMware is used as the virtualization platform.
 
-My setup is different:
+The installation process in the course can be summarized as:
 
-Host OS: Kali Linux
-Virtualization: QEMU/KVM + libvirt
-Target VM: Metasploitable 2
-Virtual network: libvirt `default` network
+1. Install Kali Linux as a virtual machine.
+2. Download and install Metasploitable 2 as a second virtual machine.
+3. Configure the virtual network so that Kali and Metasploitable 2 can communicate with each other.
+4. Use Kali as the attacker machine and Metasploitable 2 as the intentionally vulnerable target.
+My Setup
 
-Since Kali is already the host OS, I only need to install Metasploitable 2 as a virtual machine.
+My environment was different from the one used in the course. I already had Kali Linux installed directly as my host operating system, so I did not need to create a Kali virtual machine.
+
+Instead, I only needed to install Metasploitable 2 as a virtual machine. Rather than using VMware as in the course, I used QEMU/KVM with libvirt.
+
+Therefore, my lab setup was:
+
+```text
+Course:
+
+Windows host
+    │
+    └── VMware
+         ├── Kali Linux
+         └── Metasploitable 2
+
+
+My setup:
+
+Kali Linux host
+    │
+    └── QEMU/KVM + libvirt
+         └── Metasploitable 2
+```
+
+The main difference is therefore the virtualization environment. The course uses VMware with both Kali Linux and Metasploitable 2 as virtual machines, while my Kali installation is the host and only Metasploitable 2 is virtualized.
+
+Because the Metasploitable 2 download provides a pre-built VMware-compatible VMDK disk image, an additional conversion step was needed before importing it into my QEMU/libvirt environment.
 
 ## 1. Install QEMU/KVM and libvirt
 
@@ -88,7 +115,7 @@ The image is a VMDK with a virtual size of 8 GiB. The actual file is approximate
 
 The course uses VMware, so the original VMDK can be used directly in that environment.
 
-For my QEMU/libvirt setup, I converted the VMDK to QCOW2, QEMU's native disk-image format:
+For my QEMU/libvirt setup, I converted the VMDK to QCOW2, a disk-image format commonly used with QEMU/libvirt:
 
 ```bash
 sudo qemu-img convert -p \
@@ -148,7 +175,7 @@ vnet0       network   default   e1000
 
 ## 5. Verify the network connection
 
-The libvirt `default` network provides the virtual bridge `virbr0`:
+In my setup, the `default` libvirt network is backed by the `virbr0` bridge.:
 
 ```text
 Kali host
@@ -200,8 +227,6 @@ The default credentials for Metasploitable 2 are:
 Username: msfadmin
 Password: msfadmin
 ```
-
-These credentials are intentionally weak because Metasploitable 2 is designed as a vulnerable target for security training.
 
 ## Notes
 
