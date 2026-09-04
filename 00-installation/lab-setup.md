@@ -37,6 +37,8 @@ Kali Linux host
 
 Because the Metasploitable 2 download provides a pre-built VMware-compatible VMDK disk image, an additional conversion step was needed before importing it into my QEMU/libvirt environment.
 
+I chose to use QEMU/KVM with libvirt rather than installing VMware because I had previously used QEMU/libvirt for another Linux virtualization setup and expected it to already be available on this system. Although some remnants of the previous setup were present, I still had to install and configure the required packages again.
+
 ## Network Isolation
 
 Because Metasploitable 2 is intentionally vulnerable, the course recommends keeping it on an isolated network.
