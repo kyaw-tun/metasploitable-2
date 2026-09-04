@@ -15,7 +15,7 @@ My environment was different from the one used in the course. I already had Kali
 
 Instead, I only needed to install Metasploitable 2 as a virtual machine. Rather than using VMware as in the course, I used QEMU/KVM with libvirt.
 
-Therefore, my lab setup was:
+The two setups can be illustrated as follows:
 
 ```text
 Course:
