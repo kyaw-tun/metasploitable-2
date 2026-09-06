@@ -7,6 +7,10 @@
 - Scan date: August 14, 2026
 - Nmap version: 7.99
 
+## Evidence
+
+[Raw Nmap scan output](../evidence/scan.txt)
+
 ## Command Used
 
 ```bash
