@@ -32,4 +32,4 @@ Because the Nmap binary has SUID set and is owned by `root`, the shell is execut
 
 This demonstrates how a SUID-enabled binary can become a privilege-escalation opportunity when the program provides a way to execute commands or spawn a shell.
 
-The interactive mode used in this lesson is specific to older versions of Nmap. Modern versions of Nmap no longer include this interactive mode.
+The interactive mode used in this lesson is specific to older versions of Nmap (version 2.02 to 5.21). Modern versions of Nmap no longer include this interactive mode.
