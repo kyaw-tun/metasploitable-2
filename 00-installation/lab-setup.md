@@ -1,4 +1,4 @@
-#Installation
+# Installation
 
 The course sets up the Red Team Essentials lab using two virtual machines: Kali Linux and Metasploitable 2. The host machine used in the course is Windows, and VMware is used as the virtualization platform.
 
