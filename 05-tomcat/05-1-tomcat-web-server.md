@@ -36,3 +36,45 @@ tomcat default credentials
 on Google and there are multiple links showing the results. And I chose the first link which is a [GitHub page](https://gist.github.com/0xRar/70aae102af56495b7be51486d363c4bd) on default passwords.
 
 I also saved a screenshot of the result in the `evidence/screenshots` directory.
+
+### Brute-Forcing with Hydra
+
+Another way to find the credentials is to use Hydra, a tool for brute-forcing login credentials against different network services.
+
+For this exercise, I used Hydra against the Tomcat Manager login.
+
+First, I made sure Hydra and SecLists were installed:
+
+```bash
+sudo apt update && sudo apt install seclists hydra
+```
+
+I then used Hydra with a known username and password:
+
+```bash
+hydra -l username -p password -s 8080 -f 192.168.122.68 http-get /manager/html
+```
+
+Here:
+
+- -l specifies a single username.
+- -p specifies a single password.
+- -s specifies the port where the service is running.
+- -f tells Hydra to stop after finding a valid login.
+- `192.168.122.68` is the target IP address.
+- `http-get /manager/html` specifies the HTTP service and the path to the login page.
+
+You can also use username and password lists instead:
+
+```bash
+hydra -L username-list -P password-list -s 9281 -f 192.168.122.68 http-get /manager/html
+```
+
+In this case:
+
+- -L uses a list of usernames.
+- -P uses a list of passwords.
+
+The important part here is that Hydra needs to know where the login is and which credentials it should try.
+
+This gave me two different ways to approach a protected Tomcat Manager login: checking for default credentials or brute-forcing the credentials with Hydra.
