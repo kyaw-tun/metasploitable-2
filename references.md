@@ -27,6 +27,9 @@ The lab environment and tools I used during the assessment are listed below.
 
 - GTFOBins — Used as a reference when investigating ways to use existing Unix/Linux binaries for unintended purposes.
 
+## Other
+- ChatGPT — Used to help troubleshoot and adapt the Metasploitable 2 lab setup to QEMU/virt-manager.
+
 ## Notes
 
 The tools and references listed here are the ones I remember using during the current assessment. This list may be updated later if I explore additional techniques or make new discoveries.
