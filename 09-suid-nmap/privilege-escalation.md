@@ -2,7 +2,7 @@
 
 In the previous lesson, we went through the output from LinPEAS and LinEnum to look for possible privilege-escalation opportunities. LinPEAS uses different colors to highlight information that may be worth investigating.
 
-When running LinPeas, it is explained that the orange-highlighted results have a high chance of being an attack vector, while red-highlighted results are also worth checking. There are other colors in the output as well, each with its own meaning according to the LinPEAS legend.
+When running LinPEAs, it is explained that the orange-highlighted results have a high chance of being an attack vector, while red-highlighted results are also worth checking. There are other colors in the output as well, each with its own meaning according to the LinPEAS legend.
 
 While going through the results, I looked for the orange and red highlighted information. There were several results that could be investigated further, and the SUID-enabled Nmap binary was one of them.
 
