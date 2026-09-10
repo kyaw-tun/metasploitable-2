@@ -11,7 +11,7 @@ The repository is intended as a learning reference rather than a standalone pene
 
 ## Course Progression
 
-| # | Topic | Skill |
+| # | Topic | Area Covered |
 |---|---|---|
 | 00 | Lab Setup | QEMU/KVM/libvirt deployment |
 | 01 | Nmap | Network/service enumeration |
