@@ -2,9 +2,9 @@
 
 ## Course Overview
 
-The assessment is based on the Red Team Essentials course by WYWM (Greenbeam).
+This documentation is based on the Red Team Essentials course by WYWM (Greenbeam).
 
-The course introduced the basic workflow and techniques used during a red team assessment, starting from reconnaissance and enumeration, followed by vulnerability research, brute-force attacks, exploitation, initial access, post-exploitation, and privilege escalation.
+The course introduced the basic workflow and techniques used during a red team essentials course work, starting from reconnaissance and enumeration, followed by vulnerability research, brute-force attacks, exploitation, initial access, post-exploitation, and privilege escalation.
 
 The practical exercises were performed against Metasploitable 2, an intentionally vulnerable virtual machine, using Kali Linux as the attacker machine.
 
@@ -27,7 +27,7 @@ Red Team Essentials
                                             └── Root
 ```
 
-Along the way, the assessment covered:
+Along the way, the course covered:
 
 - Network and service enumeration with Nmap
 - Searching for known exploits with SearchSploit
@@ -49,4 +49,4 @@ After adapting the installation, I was able to run the target machine alongside 
 
 ## Current Status
 
-The Red Team Essentials assessment covered in this repository has been completed. I may continue experimenting with the Metasploitable 2 environment and add additional techniques or discoveries to the repository later.
+The Red Team Essentials course's documentation covered in this repository has been completed. I may continue experimenting with the Metasploitable 2 environment and add additional techniques or discoveries to the repository later.
