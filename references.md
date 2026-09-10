@@ -1,6 +1,6 @@
 # References
 
-This assessment is based on the Red Team Essentials course by WYWM (Greenbeam).
+This documentation is based on the Red Team Essentials course by WYWM (Greenbeam).
 
 The lab environment and tools I used during the assessment are listed below.
 
@@ -32,4 +32,4 @@ The lab environment and tools I used during the assessment are listed below.
 
 ## Notes
 
-The tools and references listed here are the ones I remember using during the current assessment. This list may be updated later if I explore additional techniques or make new discoveries.
+The tools and references listed here are the ones I remember using during the current documentation. This list may be updated later if I explore additional techniques or make new discoveries.
