@@ -50,9 +50,7 @@ In the VMware setup used in the course, the network configuration is:
 
 This allows the Kali and Metasploitable 2 virtual machines to communicate with each other without placing the vulnerable target directly on the external network.
 
-My setup uses libvirt's `default` virtual network instead. The `default` network is backed by the `virbr0` virtual bridge.
-
-The important principle is the same: Metasploitable 2 should be kept on a controlled lab network and should not be exposed directly to an untrusted or external network.
+My setup uses libvirt's `default` NAT network instead. Although this differs from the host-only network used in the course, the important principle remains the same: the intentionally vulnerable VM should not be directly exposed to an untrusted external network.
 
 ## 1. Install QEMU/KVM and libvirt
 
