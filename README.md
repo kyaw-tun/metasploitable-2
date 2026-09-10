@@ -48,7 +48,7 @@ For more details about the setup and references, see [references](/references.md
 
 ## Notes
 
-The course material documented here represents what I have learned so far. Metasploitable 2 contains many other vulnerabilities and attack paths that are not covered by this course, so I may explore them independently in the future.
+The course material documentation is complete and it represents what I have learned so far, but the lab remains open for further exploration. Metasploitable 2 contains many other vulnerabilities and attack paths that are not covered by this course, so I may explore them independently in the future.
 
 ## Related
 
