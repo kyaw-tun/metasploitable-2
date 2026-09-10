@@ -49,4 +49,4 @@ After adapting the installation, I was able to run the target machine alongside 
 
 ## Current Status
 
-The Red Team Essentials course's documentation covered in this repository has been completed. I may continue experimenting with the Metasploitable 2 environment and add additional techniques or discoveries to the repository later.
+Although, I have finished documenting the Red Team essentials course of exploiting the Metasploitable 2 virtual machine,  I may continue experimenting with the Metasploitable 2 environment and add additional techniques or discoveries to the repository later.
