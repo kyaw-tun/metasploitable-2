@@ -16,7 +16,7 @@ The lab environment and tools I used during the assessment are listed below.
 - SearchSploit — Used to search for known exploits related to discovered services and software versions.
 - Exploit-DB — Used as a reference when researching vulnerabilities and available exploits.
 - Metasploit Framework — Used for exploitation and post-exploitation.
-- Hydra — Used for brute-forcing the Apache tomcat server's credentials.
+- Hydra — Used for brute-forcing the Apache Tomcat server's credentials.
 - MSFvenom — Used for payload generation.
 - LinPEAS — Used for Linux enumeration and privilege-escalation checks.
 - LinEnum — Used for Linux system enumeration.
